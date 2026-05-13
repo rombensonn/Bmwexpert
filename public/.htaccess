@@ -1,0 +1,17 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^storage/ - [F,L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule . /index.html [L]
+</IfModule>
+
+<FilesMatch "^(config\.php|.*\.jsonl|.*\.log|.*\.env)$">
+  Require all denied
+</FilesMatch>

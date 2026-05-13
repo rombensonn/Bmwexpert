@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+api/config.php
+storage/rate-limit.json
+*.log
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
